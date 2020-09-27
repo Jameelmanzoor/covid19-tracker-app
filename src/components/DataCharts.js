@@ -3,17 +3,19 @@ import LineCharts from './LineChart';
 
 
 
-export const DataCharts = () => {
+export const DataCharts = ({country}) => {
   const [historicalData, setHistoricalData] = useState({});
+  let url = (!country || country === 'Global')?'https://disease.sh/v3/covid-19/historical/all?lastdays=all':`https://disease.sh/v3/covid-19/historical/${country}?lastdays=all`;
   useEffect(() => {
     async function getData() {
-      const response = await fetch('https://disease.sh/v3/covid-19/historical/Afghanistan?lastdays=all');
+      const response = await fetch(url);
       const data = await response.json();
-      setHistoricalData(data.timeline);
+      (!country || country === 'Global')?setHistoricalData(data):setHistoricalData(data.timeline);;
+      
     }
     getData();
 
-  }, [])
+  }, [url])
   console.log(historicalData);
   return (
     <div>

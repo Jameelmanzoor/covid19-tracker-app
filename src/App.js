@@ -10,7 +10,7 @@ function App() {
     <>
       <NavBar country={country} setCountry={setCountry} />
       <DataCards country={country} />
-      <DataCharts />
+      <DataCharts country={country} />
     </>
   );
 }
