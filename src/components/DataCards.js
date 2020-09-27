@@ -70,16 +70,18 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function DataCards() {
-  const [globalData, setGlobalData] = useState({})
+export default function DataCards({country}) {
+  const [globalData, setGlobalData] = useState({});
+
+  let url =(!country || country==='Global')?'https://disease.sh/v3/covid-19/all':`https://disease.sh/v3/covid-19/countries/${country}`;
   useEffect(() => {
     async function getData() {
-      const response = await fetch('https://disease.sh/v3/covid-19/all');
+      const response = await fetch(url);
       let data = await response.json();
       setGlobalData(data);
     }
     getData();
-  }, [])
+  },[url])
   console.log(globalData);
   const classes = useStyles();
 
@@ -93,7 +95,7 @@ export default function DataCards() {
               <Typography className={classes.data} variant='h6'>{globalData.cases}</Typography>
             </div>
             <div className={classes.containerTwo}>
-              <Tooltip title='Today Confirmed Cases' color=''>
+              <Tooltip title='Today Confirmed Cases'>
                 <Typography className={`${classes.data} ${classes.todayCases}`}> +{globalData.todayCases}</Typography>
               </Tooltip>
             </div>
@@ -137,7 +139,7 @@ export default function DataCards() {
             <div className={classes.containerTwo}>
               <Tooltip title='Today New Active Cases'>
                 <Typography className={`${classes.data} ${classes.todayActive}`}> 
-                +{globalData.todayCases - globalData.todayDeaths - globalData.todayRecovered}</Typography>
+                +{Math.abs(globalData.todayCases - globalData.todayDeaths - globalData.todayRecovered)}</Typography>
               </Tooltip>
             </div>
           </Paper>
