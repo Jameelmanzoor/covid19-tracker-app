@@ -38,6 +38,15 @@ export default function LineCharts({ historicalData }) {
               hoverBackgroundColor: 'rgba(255,255,132,0.4)',
               hoverBorderColor: 'rgba(255,150,132,1)',
               data: Object.values(deaths)
+            },
+            {
+              label: 'Recovered Patients',
+              backgroundColor: 'rgba(255,99,132,0.2)',
+              borderColor: 'green',
+              borderWidth: 1,
+              hoverBackgroundColor: 'rgba(255,255,132,0.4)',
+              hoverBorderColor: 'rgba(255,150,132,1)',
+              data: Object.values(recovered)
             }
           ]
         }} />
