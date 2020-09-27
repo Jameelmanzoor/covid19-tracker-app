@@ -53,13 +53,10 @@ export default function NavBar({ country, setCountry }) {
   }, [])
   // console.log(countries);
   const classes = useStyles();
-  // We have Pushed all the countries to a list 
-  let countriesList = ['Global'];
-  countries.map((count) => countriesList.push(count.country));
-  // console.log(countriesList);
 
   const handleChange = (event) => {
     setCountry(event.target.value);
+    console.log('Value for NaveBar:', country)
 
   };
   return (
@@ -76,7 +73,8 @@ export default function NavBar({ country, setCountry }) {
                 onChange={handleChange}
                 displayEmpty
               >
-                {countriesList.map((country, index) => <MenuItem key={index} value={country}>{country}</MenuItem>)}
+                <MenuItem value=''>Global</MenuItem>
+                {countries.map((count, index) => <MenuItem key={index} value={count.country}>{count.country}</MenuItem>)}
               </Select>
             </FormControl>
           </div>

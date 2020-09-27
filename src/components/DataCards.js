@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
 export default function DataCards({country}) {
   const [globalData, setGlobalData] = useState({});
 
-  let url =(!country || country==='Global')?'https://disease.sh/v3/covid-19/all':`https://disease.sh/v3/covid-19/countries/${country}`;
+  let url = (!country || country==='Global')?'https://disease.sh/v3/covid-19/all':`https://disease.sh/v3/covid-19/countries/${country}`;
   useEffect(() => {
     async function getData() {
       const response = await fetch(url);
@@ -81,7 +81,7 @@ export default function DataCards({country}) {
     }
     getData();
   },[url])
-  // console.log(globalData);
+  console.log('Data', globalData);
   const classes = useStyles();
 
   return (

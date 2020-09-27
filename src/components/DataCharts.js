@@ -10,12 +10,12 @@ export const DataCharts = ({country}) => {
     async function getData() {
       const response = await fetch(url);
       const data = await response.json();
-      (!country || country === 'Global')?setHistoricalData(data):setHistoricalData(data.timeline);;
+      (!country)?setHistoricalData(data):setHistoricalData(data.timeline);;
       
     }
     getData();
 
-  }, [url])
+  }, [url, country])
   console.log(historicalData);
   return (
     <div>
