@@ -82,7 +82,7 @@ export default function DataCards({country}) {
     }
     getData();
   },[url])
-  console.log(globalData);
+  // console.log(globalData);
   const classes = useStyles();
 
   return (
