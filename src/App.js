@@ -2,6 +2,7 @@ import React, {useState } from 'react';
 import './App.css';
 import DataCards from './components/DataCards';
 import {DataCharts} from './components/DataCharts';
+import { Heading } from './components/Heading';
 import NavBar from './components/NavBar';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <NavBar country={country} setCountry={setCountry} />
+      <Heading country={country}/>
       <DataCards country={country} />
       <DataCharts country={country} />
     </>
