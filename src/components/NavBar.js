@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     margin: 0,
     padding: 0,
+    marginBottom: 60
   },
   title: {
     flexGrow: 1,

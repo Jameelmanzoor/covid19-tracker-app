@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 1200,
     margin: '0 auto',
-    marginTop: 100,
   },
   paper: {
     padding: theme.spacing(2),
@@ -22,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-around',
     letterSpacing: '1px',
     alignItems: 'center',
-    height: 100
+    height: 100,
+    borderRadius: 10
   },
   title: {
     color: 'blue',
