@@ -16,15 +16,15 @@ const useStyle = makeStyles(() => ({
 }
 ));
 
-export default function BarCharts({ dataThirtyDays }) {
+export default function DeathsChart({ dataThirtyDays }) {
   if (dataThirtyDays) {
     var { cases, deaths, recovered } = dataThirtyDays;
-    if (cases) {
+    if (deaths) {
       var casesKeys = Object.keys(cases);
       var casesValues = Object.values(cases);
       console.log('CasesKeys', casesKeys);
 
-      // Created A new array that calculates Daily new cases 
+      // Created A new array that calculates Daily new Deaths by Covid-19 
       var todayCases = casesValues.flatMap((val, ind) => ind === 0 ? [] : (val - casesValues[ind - 1]));
     }
   }

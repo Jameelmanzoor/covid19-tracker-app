@@ -62,7 +62,7 @@ export default function NavBar({ country, setCountry }) {
   };
   return (
     <div className={classes.root}>
-      <AppBar position='fixed' color='primary' className={classes.appBar}>
+      <AppBar position='absolute' color='primary' className={classes.appBar}>
         <Toolbar>
           <Typography className={classes.title} variant="h4" noWrap>
             COVID-19 Tracker App
