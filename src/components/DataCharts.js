@@ -5,7 +5,7 @@ import LineCharts from './LineChart';
 
 export const DataCharts = ({country}) => {
   const [historicalData, setHistoricalData] = useState({});
-  let url = (!country || country === 'Global')?'https://disease.sh/v3/covid-19/historical/all?lastdays=30':`https://disease.sh/v3/covid-19/historical/${country}?lastdays=30`;
+  let url = (!country || country === 'Global')?'https://disease.sh/v3/covid-19/historical/all?lastdays=all':`https://disease.sh/v3/covid-19/historical/${country}?lastdays=all`;
   useEffect(() => {
     async function getData() {
       const response = await fetch(url);

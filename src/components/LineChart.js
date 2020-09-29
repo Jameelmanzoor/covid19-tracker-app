@@ -1,12 +1,17 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
 import { Line } from 'react-chartjs-2';
 
 const useStyle = makeStyles(() => ({
   chartContainer: {
     maxWidth: 1200,
     margin: '0 auto',
-    marginTop: 50
+    marginTop: 50,
+  },
+  heading: {
+    margin: '0 auto',
+    maxWidth: 600,
+    textAlign: 'center'
   }
 }
 ));
@@ -18,6 +23,7 @@ export default function LineCharts({ historicalData }) {
   const classes = useStyle();
   return (
     cases ? (<div className={classes.chartContainer}>
+        <Typography className={classes.heading}>COVID-19 | Overview</Typography>
         <Line data={{
           labels: Object.keys(cases),
           datasets: [
@@ -48,7 +54,7 @@ export default function LineCharts({ historicalData }) {
               hoverBorderColor: 'rgba(255,150,132,1)',
               data: Object.values(recovered)
             }
-          ]
+          ],
         }} />
     </div>) : null
   );

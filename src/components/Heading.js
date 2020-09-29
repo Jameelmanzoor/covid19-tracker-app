@@ -6,8 +6,8 @@ const useStyles = makeStyles(() => ({
     margin: '0 auto',
     maxWidth: 600,
     marginTop: 80,
-    marginBottom: 20
-    
+    marginBottom: 20,
+    textAlign: 'center'
   }
 }))
 
