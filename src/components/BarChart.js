@@ -40,11 +40,11 @@ export default function BarCharts({ dataThirtyDays }) {
         datasets: [
           {
             label: 'Confirmed Cases',
-            backgroundColor: 'rgba(255,99,132,0.2)',
-            borderColor: 'rgba(255,99,132,1)',
+            backgroundColor: 'rgba(56, 209, 186,0.2)',
+            borderColor: 'rgba(56, 209, 186,1)',
             borderWidth: 1,
-            hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-            hoverBorderColor: 'rgba(255,99,132,1)',
+            hoverBackgroundColor: 'rgba(56, 209, 186,0.4)',
+            hoverBorderColor: 'rgba(56, 209, 186,1)',
             data: todayCases
           },
         ],
