@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import BarCharts from './BarChart';
 import LineCharts from './LineChart';
 
 
@@ -16,10 +17,24 @@ export const DataCharts = ({country}) => {
     getData();
 
   }, [url, country])
-  console.log(historicalData);
+  
+
+  const [barData, setBarData] = useState({});
+  let dataUrl = (!country || country === 'Global')?'https://disease.sh/v3/covid-19/historical/all?lastdays=31':`https://disease.sh/v3/covid-19/historical/${country}?lastdays=31`;
+  useEffect(() => {
+    async function getData() {
+      const response = await fetch(dataUrl);
+      const data = await response.json();
+      (!country)?setBarData(data):setBarData(data.timeline);
+      
+    }
+    getData();
+
+  }, [dataUrl, country])
   return (
     <div>
       <LineCharts historicalData={historicalData} />
+      <BarCharts dataThirtyDays={barData}/>
     </div>
   )
 }
