@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import BarCharts from './BarChart';
+import DeathsChart from './DeathsChart';
 import LineCharts from './LineChart';
+import RecoveredChart from './RecoveredChart';
 
 
 
@@ -35,6 +37,8 @@ export const DataCharts = ({country}) => {
     <div>
       <LineCharts historicalData={historicalData} />
       <BarCharts dataThirtyDays={barData}/>
+      <DeathsChart dataThirtyDays={barData}/>
+      <RecoveredChart dataThirtyDays={barData} />
     </div>
   )
 }
