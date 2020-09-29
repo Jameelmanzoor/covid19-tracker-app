@@ -38,11 +38,11 @@ export default function RecoveredChart({ dataThirtyDays }) {
         datasets: [
           {
             label: 'Recovered',
-            backgroundColor: 'rgba(255,99,132,0.2)',
-            borderColor: 'rgba(255,99,132,1)',
+            backgroundColor: 'rgba(2,30,7, 0.6)',
+            borderColor: 'rgba(2,30,7,1)',
             borderWidth: 1,
-            hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-            hoverBorderColor: 'rgba(255,99,132,1)',
+            hoverBackgroundColor: 'rgba(2,30,7,0.8)',
+            hoverBorderColor: 'rgba(2,30,7,1)',
             data: todayRecovered
           },
         ],
