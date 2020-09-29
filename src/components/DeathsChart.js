@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
-import { Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 
 const useStyle = makeStyles(() => ({
   chartContainer: {
@@ -20,32 +20,29 @@ export default function DeathsChart({ dataThirtyDays }) {
   if (dataThirtyDays) {
     var { cases, deaths, recovered } = dataThirtyDays;
     if (deaths) {
-      var casesKeys = Object.keys(cases);
-      var casesValues = Object.values(cases);
-      console.log('CasesKeys', casesKeys);
+      var casesKeys = Object.keys(deaths);
+      var casesValues = Object.values(deaths);
 
       // Created A new array that calculates Daily new Deaths by Covid-19 
-      var todayCases = casesValues.flatMap((val, ind) => ind === 0 ? [] : (val - casesValues[ind - 1]));
+      var todayDeaths = casesValues.flatMap((val, ind) => ind === 0 ? [] : Math.abs((val - casesValues[ind - 1])));
     }
   }
-
-
-
+  
   const classes = useStyle();
   return (
-    todayCases ? (<div className={classes.chartContainer}>
-      <Typography className={classes.heading}>COVID-19 | Last 30 Days Daily Cases</Typography>
-      <Bar data={{
+    todayDeaths ? (<div className={classes.chartContainer}>
+      <Typography className={classes.heading}>COVID-19 | Last 30 Days Fatal Cases</Typography>
+      <Line data={{
         labels: casesKeys.slice(1),
         datasets: [
           {
-            label: 'Confirmed Cases',
+            label: 'Fatal Cases',
             backgroundColor: 'rgba(255,99,132,0.2)',
             borderColor: 'rgba(255,99,132,1)',
             borderWidth: 1,
             hoverBackgroundColor: 'rgba(255,99,132,0.4)',
             hoverBorderColor: 'rgba(255,99,132,1)',
-            data: todayCases
+            data: todayDeaths
           },
         ],
       }}
