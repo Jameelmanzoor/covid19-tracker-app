@@ -1,7 +1,7 @@
 import React, {useState } from 'react';
 import './App.css';
 import DataCards from './components/DataCards';
-import {DataCharts} from './components/DataCharts';
+import {DataCharts} from './components/charts/DataCharts';
 import { Heading } from './components/Heading';
 import NavBar from './components/NavBar';
 
