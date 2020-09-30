@@ -4,7 +4,7 @@ import DeathsChart from './DeathsChart';
 import TimelineCharts from './TimelineChart';
 import RecoveredChart from './RecoveredChart';
 import DataTable from './DataTable';
-import { Grid, makeStyles, Paper } from '@material-ui/core';
+import { Grid, makeStyles, Paper, Typography } from '@material-ui/core';
 
 
 const useStyles = makeStyles({
@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
   paper: {
     padding: 10,
-    borderRadius: 10 
+    borderRadius: 10
   }
 })
 export const DataCharts = ({ country }) => {
@@ -61,9 +61,10 @@ export const DataCharts = ({ country }) => {
     }
     getData();
   }, [])
-
+  
+  // if we have historicalData then Ghraphs Are shown else only we show worldwide covid-19 summary
   return (
-    <div>
+    historicalData ? (<div>
       <Grid container spacing={3} className={classes.mainGrid}>
         <Grid item xs={12} sm={12}>
           <Paper elevation={3} className={classes.paper}>
@@ -91,8 +92,12 @@ export const DataCharts = ({ country }) => {
           </Paper>
         </Grid>
       </Grid>
-
-
-    </div>
+    </div>) : <Grid container spacing={3} className={classes.mainGrid}>
+        <Grid item xs={12} sm={12}>
+          <Paper elevation={3} className={classes.paper}>
+            <DataTable countriesData={countriesData} />
+          </Paper>
+        </Grid>
+      </Grid>
   )
 }
