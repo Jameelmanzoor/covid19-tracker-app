@@ -57,7 +57,6 @@ export default function NavBar({ country, setCountry }) {
 
   const handleChange = (event) => {
     setCountry(event.target.value);
-    console.log('Value for NaveBar:', country)
 
   };
   return (
