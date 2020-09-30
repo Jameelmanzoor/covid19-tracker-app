@@ -4,7 +4,7 @@ import DeathsChart from './DeathsChart';
 import TimelineCharts from './TimelineChart';
 import RecoveredChart from './RecoveredChart';
 import DataTable from './DataTable';
-import { Grid, makeStyles, Paper, Typography } from '@material-ui/core';
+import { Grid, makeStyles, Paper } from '@material-ui/core';
 
 
 const useStyles = makeStyles({
