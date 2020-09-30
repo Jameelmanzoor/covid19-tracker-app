@@ -5,8 +5,8 @@ const useStyles = makeStyles(() => ({
   heading: {
     margin: '0 auto',
     maxWidth: 600,
-    marginTop: 80,
-    marginBottom: 20,
+    marginTop: 10,
+    marginBottom: 10,
     textAlign: 'center'
   }
 }))

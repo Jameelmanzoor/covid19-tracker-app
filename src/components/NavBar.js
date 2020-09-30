@@ -10,11 +10,11 @@ import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    maxWidth: '100vw',
     boxSizing: 'border-box',
     flexGrow: 1,
     margin: 0,
     padding: 0,
-    marginBottom: 60
   },
   title: {
     flexGrow: 1,
@@ -61,7 +61,7 @@ export default function NavBar({ country, setCountry }) {
   };
   return (
     <div className={classes.root}>
-      <AppBar position='absolute' color='primary' className={classes.appBar}>
+      <AppBar position='static' color='primary' className={classes.appBar}>
         <Toolbar>
           <Typography className={classes.title} variant="h4" noWrap>
             COVID-19 Tracker App
