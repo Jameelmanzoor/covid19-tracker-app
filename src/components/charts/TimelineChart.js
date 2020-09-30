@@ -16,7 +16,7 @@ const useStyle = makeStyles(() => ({
 }
 ));
 
-export default function LineCharts({ historicalData }) {
+export default function TimelineChart({ historicalData }) {
   if(historicalData) {
   var {cases, deaths, recovered} = historicalData;
   }
