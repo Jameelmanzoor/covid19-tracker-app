@@ -20,6 +20,7 @@ const useStyles = makeStyles({
     margin: '0 auto',
     maxWidth: 600,
     textAlign: 'center',
+    marginBottom: 10
   },
 });
 

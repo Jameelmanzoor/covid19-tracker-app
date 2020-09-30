@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 1200,
     margin: '0 auto',
+    marginBottom: 10
   },
   paper: {
     padding: theme.spacing(2),

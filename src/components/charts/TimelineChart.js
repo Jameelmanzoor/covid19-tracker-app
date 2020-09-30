@@ -4,7 +4,6 @@ import { Line } from 'react-chartjs-2';
 
 const useStyle = makeStyles(() => ({
   heading: {
-    marginTop: 20,
     margin: '0 auto',
     maxWidth: 600,
     textAlign: 'center'

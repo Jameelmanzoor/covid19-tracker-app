@@ -13,8 +13,8 @@ const useStyles = makeStyles({
     margin: '0 auto',
   },
   paper: {
-    maxWidth: 1200,
-    margin: '0 auto',
+    padding: 10,
+    borderRadius: 10 
   }
 })
 export const DataCharts = ({ country }) => {
@@ -65,27 +65,28 @@ export const DataCharts = ({ country }) => {
   return (
     <div>
       <Grid container spacing={3} className={classes.mainGrid}>
-        <Grid item xs={12} sm={12}><Paper elevation={3}>
-          <TimelineCharts historicalData={historicalData} />
-        </Paper>
+        <Grid item xs={12} sm={12}>
+          <Paper elevation={3} className={classes.paper}>
+            <TimelineCharts historicalData={historicalData} />
+          </Paper>
         </Grid>
-        <Grid item xs={12} sm={6} >
-          <Paper elevation={3}>
+        <Grid item xs={12} sm={6}>
+          <Paper elevation={3} className={classes.paper}>
             <CasesChart dataThirtyDays={barData} />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Paper elevation={3}>
+          <Paper elevation={3} className={classes.paper}>
             <DeathsChart dataThirtyDays={barData} />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12}>
-          <Paper elevation={3}>
+          <Paper elevation={3} className={classes.paper}>
             <RecoveredChart dataThirtyDays={barData} />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12}>
-          <Paper elevation={3}>
+          <Paper elevation={3} className={classes.paper}>
             <DataTable countriesData={countriesData} />
           </Paper>
         </Grid>
