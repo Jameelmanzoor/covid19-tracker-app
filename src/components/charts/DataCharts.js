@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import BarCharts from './BarChart';
+import CasesChart from './CasesChart';
 import DeathsChart from './DeathsChart';
-import LineCharts from './LineChart';
+import TimelineCharts from './TimelineChart';
 import RecoveredChart from './RecoveredChart';
 import DataTable from './DataTable';
+import { Grid } from '@material-ui/core';
 
 
 
@@ -28,7 +29,7 @@ export const DataCharts = ({ country }) => {
     getData();
 
   }, [url, country])
-  
+
   // Get timeline data for all the 31 Days
   useEffect(() => {
     async function getData() {
@@ -52,14 +53,24 @@ export const DataCharts = ({ country }) => {
   }, [])
 
   console.log('Summary of Countries: ', countriesData);
-  
+
   return (
     <div>
-      <LineCharts historicalData={historicalData} />
-      <BarCharts dataThirtyDays={barData} />
-      <DeathsChart dataThirtyDays={barData} />
-      <RecoveredChart dataThirtyDays={barData} />
-      <DataTable countriesData={countriesData}/>
+      <TimelineCharts historicalData={historicalData} />
+      <Grid container spacing={3} >
+        <Grid item xs={12} sm={6}>
+          <CasesChart dataThirtyDays={barData} />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <DeathsChart dataThirtyDays={barData} />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <RecoveredChart dataThirtyDays={barData} />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <DataTable countriesData={countriesData} />
+        </Grid>
+      </Grid>
     </div>
   )
 }
