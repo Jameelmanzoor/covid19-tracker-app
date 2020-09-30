@@ -3,11 +3,6 @@ import { makeStyles, Typography } from '@material-ui/core';
 import { Line } from 'react-chartjs-2';
 
 const useStyle = makeStyles(() => ({
-  chartContainer: {
-    maxWidth: 1200,
-    margin: '0 auto',
-    marginTop: 50,
-  },
   heading: {
     margin: '0 auto',
     maxWidth: 600,
@@ -30,7 +25,7 @@ export default function DeathsChart({ dataThirtyDays }) {
   
   const classes = useStyle();
   return (
-    todayDeaths ? (<div className={classes.chartContainer}>
+    todayDeaths ? (<div>
       <Typography className={classes.heading}>COVID-19 | Last 30 Days Fatal Cases</Typography>
       <Line data={{
         labels: casesKeys.slice(1),

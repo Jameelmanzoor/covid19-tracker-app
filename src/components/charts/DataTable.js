@@ -12,7 +12,6 @@ import { Compare } from '@material-ui/icons';
 
 const useStyles = makeStyles({
   container: {
-    maxWidth: 1200,
     overflowY: 'scroll',
     margin: '0 auto',
     maxHeight: 360,
@@ -21,7 +20,6 @@ const useStyles = makeStyles({
     margin: '0 auto',
     maxWidth: 600,
     textAlign: 'center',
-    marginTop: 50
   },
 });
 

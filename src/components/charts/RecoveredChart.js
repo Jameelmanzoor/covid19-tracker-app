@@ -3,11 +3,6 @@ import { makeStyles, Typography } from '@material-ui/core';
 import { Bar } from 'react-chartjs-2';
 
 const useStyle = makeStyles(() => ({
-  chartContainer: {
-    maxWidth: 1200,
-    margin: '0 auto',
-    marginTop: 50,
-  },
   heading: {
     margin: '0 auto',
     maxWidth: 600,
@@ -31,7 +26,7 @@ export default function RecoveredChart({ dataThirtyDays }) {
 
   const classes = useStyle();
   return (
-    todayRecovered ? (<div className={classes.chartContainer}>
+    todayRecovered ? (<div >
       <Typography className={classes.heading}>COVID-19 | Last 30 Days Daily Recovered Cases</Typography>
       <Bar data={{
         labels: casesKeys.slice(1),

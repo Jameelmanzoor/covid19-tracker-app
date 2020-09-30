@@ -3,11 +3,7 @@ import { makeStyles, Typography } from '@material-ui/core';
 import { Bar } from 'react-chartjs-2';
 
 const useStyle = makeStyles(() => ({
-  chartContainer: {
-    maxWidth: 1200,
-    margin: '0 auto',
-    marginTop: 50,
-  },
+  
   heading: {
     margin: '0 auto',
     maxWidth: 600,

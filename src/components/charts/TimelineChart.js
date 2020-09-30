@@ -3,12 +3,8 @@ import { makeStyles, Typography } from '@material-ui/core';
 import { Line } from 'react-chartjs-2';
 
 const useStyle = makeStyles(() => ({
-  chartContainer: {
-    maxWidth: 1200,
-    margin: '0 auto',
-    marginTop: 50,
-  },
   heading: {
+    marginTop: 20,
     margin: '0 auto',
     maxWidth: 600,
     textAlign: 'center'
@@ -22,7 +18,7 @@ export default function TimelineChart({ historicalData }) {
   }
   const classes = useStyle();
   return (
-    cases ? (<div className={classes.chartContainer}>
+    cases ? (<div>
         <Typography className={classes.heading}>COVID-19 | Overview</Typography>
         <Line data={{
           labels: Object.keys(cases),
