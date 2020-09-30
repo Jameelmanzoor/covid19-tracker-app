@@ -13,7 +13,7 @@ const useStyle = makeStyles(() => ({
 
 export default function RecoveredChart({ dataThirtyDays }) {
   if (dataThirtyDays) {
-    var { cases, deaths, recovered } = dataThirtyDays;
+    var recovered  = dataThirtyDays.recovered;
     if (recovered) {
       var casesKeys = Object.keys(recovered);
       var casesValues = Object.values(recovered);

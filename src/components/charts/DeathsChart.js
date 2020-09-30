@@ -13,7 +13,7 @@ const useStyle = makeStyles(() => ({
 
 export default function DeathsChart({ dataThirtyDays }) {
   if (dataThirtyDays) {
-    var { cases, deaths, recovered } = dataThirtyDays;
+    var deaths = dataThirtyDays.deaths;
     if (deaths) {
       var casesKeys = Object.keys(deaths);
       var casesValues = Object.values(deaths);
