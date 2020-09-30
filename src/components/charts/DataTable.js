@@ -18,12 +18,14 @@ function createData(countryName, cases, deaths, recovered) {
   return { countryName, cases, deaths, recovered };
 }
 
-export default function DataTable({countriesData}) {
-
-  const rows = countriesData.map((item, index) => createData(item.country, item.cases, item.deaths, item.recovered))
+export default function DataTable({ countriesData }) {
+  if (countriesData) {
+    var rows = countriesData.map((item, index) => createData(item.country, item.cases, item.deaths, item.recovered));
+    }
   const classes = useStyles();
 
   return (
+    rows?(
     <TableContainer component={Paper}>
       <Table className={classes.table} size="small" aria-label="a dense table">
         <TableHead>
@@ -34,7 +36,8 @@ export default function DataTable({countriesData}) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {
+            rows.map((row) => (
             <TableRow key={row.countryName}>
               <TableCell component="th" scope="row">
                 {row.countryName}
@@ -43,9 +46,10 @@ export default function DataTable({countriesData}) {
               <TableCell align="right">{row.deaths}</TableCell>
               <TableCell align="right">{row.recovered}</TableCell>
             </TableRow>
+            
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
+    </TableContainer>):null
   );
 }

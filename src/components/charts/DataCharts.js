@@ -10,14 +10,14 @@ import DataTable from './DataTable';
 export const DataCharts = ({ country }) => {
   const [historicalData, setHistoricalData] = useState({});
   const [barData, setBarData] = useState({});
-  const [countriesData, setcountriesData] = useState([]);
+  const [countriesData, setCountriesData] = useState([]);
 
   let url = (!country || country === 'Global') ? 'https://disease.sh/v3/covid-19/historical/all?lastdays=all' :
     `https://disease.sh/v3/covid-19/historical/${country}?lastdays=all`;
   let dataUrl = (!country || country === 'Global') ? 'https://disease.sh/v3/covid-19/historical/all?lastdays=31' :
     `https://disease.sh/v3/covid-19/historical/${country}?lastdays=31`;
 
-
+  // Get timeline data for all the days 
   useEffect(() => {
     async function getData() {
       const response = await fetch(url);
@@ -28,7 +28,8 @@ export const DataCharts = ({ country }) => {
     getData();
 
   }, [url, country])
-
+  
+  // Get timeline data for all the 31 Days
   useEffect(() => {
     async function getData() {
       const response = await fetch(dataUrl);
@@ -40,14 +41,17 @@ export const DataCharts = ({ country }) => {
 
   }, [dataUrl, country])
 
+  // Get Summary of cases of all the countries
   useEffect(() => {
     async function getData() {
       const response = await fetch('https://disease.sh/v3/covid-19/countries');
-      const data = response.json();
-      setcountriesData(data)
+      const data = await response.json();
+      setCountriesData(data);
     }
-    getData()
+    getData();
   }, [])
+
+  console.log('Summary of Countries: ', countriesData);
   
   return (
     <div>
