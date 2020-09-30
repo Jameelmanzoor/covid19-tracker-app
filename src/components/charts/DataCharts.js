@@ -4,14 +4,20 @@ import DeathsChart from './DeathsChart';
 import TimelineCharts from './TimelineChart';
 import RecoveredChart from './RecoveredChart';
 import DataTable from './DataTable';
-import { Grid } from '@material-ui/core';
+import { Grid, makeStyles } from '@material-ui/core';
 
 
-
+const useStyles = makeStyles({
+  mainGrid: {
+    maxWidth: 1200,
+    margin: '0 auto',
+  }
+})
 export const DataCharts = ({ country }) => {
   const [historicalData, setHistoricalData] = useState({});
   const [barData, setBarData] = useState({});
   const [countriesData, setCountriesData] = useState([]);
+  const classes = useStyles();
 
   let url = (!country || country === 'Global') ? 'https://disease.sh/v3/covid-19/historical/all?lastdays=all' :
     `https://disease.sh/v3/covid-19/historical/${country}?lastdays=all`;
@@ -52,12 +58,10 @@ export const DataCharts = ({ country }) => {
     getData();
   }, [])
 
-  console.log('Summary of Countries: ', countriesData);
-
   return (
     <div>
       <TimelineCharts historicalData={historicalData} />
-      <Grid container spacing={3} >
+      <Grid container spacing={3}  className={classes.mainGrid}>
         <Grid item xs={12} sm={6}>
           <CasesChart dataThirtyDays={barData} />
         </Grid>
