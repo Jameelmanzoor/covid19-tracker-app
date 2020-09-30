@@ -4,11 +4,15 @@ import DeathsChart from './DeathsChart';
 import TimelineCharts from './TimelineChart';
 import RecoveredChart from './RecoveredChart';
 import DataTable from './DataTable';
-import { Grid, makeStyles } from '@material-ui/core';
+import { Grid, makeStyles, Paper } from '@material-ui/core';
 
 
 const useStyles = makeStyles({
   mainGrid: {
+    maxWidth: 1200,
+    margin: '0 auto',
+  },
+  paper: {
     maxWidth: 1200,
     margin: '0 auto',
   }
@@ -60,21 +64,34 @@ export const DataCharts = ({ country }) => {
 
   return (
     <div>
-      <TimelineCharts historicalData={historicalData} />
-      <Grid container spacing={3}  className={classes.mainGrid}>
-        <Grid item xs={12} sm={6}>
-          <CasesChart dataThirtyDays={barData} />
+      <Grid container spacing={3} className={classes.mainGrid}>
+        <Grid item xs={12} sm={12}><Paper elevation={3}>
+          <TimelineCharts historicalData={historicalData} />
+        </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6} >
+          <Paper elevation={3}>
+            <CasesChart dataThirtyDays={barData} />
+          </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <DeathsChart dataThirtyDays={barData} />
+          <Paper elevation={3}>
+            <DeathsChart dataThirtyDays={barData} />
+          </Paper>
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <RecoveredChart dataThirtyDays={barData} />
+        <Grid item xs={12} sm={12}>
+          <Paper elevation={3}>
+            <RecoveredChart dataThirtyDays={barData} />
+          </Paper>
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <DataTable countriesData={countriesData} />
+        <Grid item xs={12} sm={12}>
+          <Paper elevation={3}>
+            <DataTable countriesData={countriesData} />
+          </Paper>
         </Grid>
       </Grid>
+
+
     </div>
   )
 }
