@@ -19,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
     display: 'flex',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     letterSpacing: '1px',
     alignItems: 'center',
-    height: 100,
+    height: 130,
     borderRadius: 10
   },
   title: {
