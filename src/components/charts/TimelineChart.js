@@ -29,28 +29,28 @@ export default function TimelineChart({ historicalData }) {
           datasets: [
             {
               label: 'Confirmed Cases',
-              backgroundColor: 'rgba(255,99,132,0.2)',
+              backgroundColor: 'transparent',
               borderColor: 'rgba(255,99,132,1)',
               borderWidth: 1,
-              hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              hoverBackgroundColor: 'transparent',
               hoverBorderColor: 'rgba(255,99,132,1)',
               data: Object.values(cases)
             },
             {
               label: 'Deaths by Covid-19',
-              backgroundColor: 'rgba(255,99,132,0.2)',
+              backgroundColor: 'transparent',
               borderColor: 'red',
               borderWidth: 1,
-              hoverBackgroundColor: 'rgba(255,255,132,0.4)',
+              hoverBackgroundColor: 'transparent',
               hoverBorderColor: 'rgba(255,150,132,1)',
               data: Object.values(deaths)
             },
             {
               label: 'Recovered Patients',
-              backgroundColor: 'rgba(255,99,132,0.2)',
+              backgroundColor: 'transparent',
               borderColor: 'green',
               borderWidth: 1,
-              hoverBackgroundColor: 'rgba(255,255,132,0.4)',
+              hoverBackgroundColor: 'transparent',
               hoverBorderColor: 'rgba(255,150,132,1)',
               data: Object.values(recovered)
             }
