@@ -16,7 +16,7 @@ const useStyle = makeStyles(() => ({
 }
 ));
 
-export default function BarCharts({ dataThirtyDays }) {
+export default function CasesChart({ dataThirtyDays }) {
   if (dataThirtyDays) {
     var { cases, deaths, recovered } = dataThirtyDays;
     if (cases) {
