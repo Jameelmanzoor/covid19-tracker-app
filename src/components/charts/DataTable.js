@@ -31,6 +31,7 @@ export default function DataTable({ countriesData }) {
         <TableHead>
           <TableRow>
             <TableCell>Country</TableCell>
+            <TableCell align="right">Cases</TableCell>
             <TableCell align="right">Deaths</TableCell>
             <TableCell align="right">Recoverd</TableCell>
           </TableRow>
